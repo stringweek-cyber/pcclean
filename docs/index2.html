@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내PC 바탕화면 정리</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS 초기화 및 변수 설정 */
+        :root {
+            --bg-color: #f7f9fc;
+            --primary-color: #007bff;
+            --secondary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1000px; 
+            padding: 20px 20px 40px;
+            display: grid; 
+            grid-template-columns: 1fr auto 1fr; 
+            align-items: center; 
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 0;
+            color: var(--secondary-color);
+            letter-spacing: -1px;
+            grid-column: 2 / 3;
+            text-align: center;
+        }
+
+        .back-btn {
+            background-color: #ddd;
+            border: none;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px; 
+            transition: all 0.3s ease;
+            box-shadow: none; 
+            grid-column: 3 / 4; 
+            justify-self: end;
+            position: absolute; 
+            top: 50px; 
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            min-width: 100px; 
+            justify-content: center;
+        }
+        
+        .back-btn-icon {
+            display: inline-block;
+            width: 16px; 
+            height: 16px;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 2L1 5h14.5a4.5 4.5 0 0 1 0 9H1'%3E%3C/path%3E%3Cpolyline points='7 19 2 14 7 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center;
+            mask-size: contain;
+            background-color: #000;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+            flex-shrink: 0;
+        }
+
+        .back-btn:hover {
+            background-color: #ccc;
+            color: #000; 
+            transform: translateY(-1px); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+        
+        .back-btn:hover .back-btn-icon {
+            transform: rotate(-10deg); 
+            background-color: #000; 
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px; 
+            padding: 0 20px 40px; 
+            margin-top: 0; 
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+        }
+
+        .theme-box {
+            background-color: #fff;
+            border-radius: 14px; 
+            padding: 18px 22px; 
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .theme-box:hover {
+             transform: translateY(-2px);
+             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-title {
+            display: none; 
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 8px 0; 
+            border-bottom: 1px dashed rgba(0,0,0,0.08);
+            flex-wrap: nowrap;
+            gap: 10px; 
+        }
+
+        .item-row:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            flex: 1; 
+            min-width: 300px; 
+            display: flex;
+            flex-direction: row; 
+            align-items: baseline; 
+            gap: 10px; 
+            max-width: calc(100% - 185px); 
+        }
+        
+        .item-title {
+            font-size: 18px; 
+            font-weight: 700;
+            color: #222;
+            line-height: 1.3; 
+            flex-shrink: 0;
+            min-width: 150px; 
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+
+        .item-desc {
+            font-size: 15px; 
+            color: #666;
+            font-weight: 400;
+            line-height: 1.3; 
+            flex-grow: 1; 
+            white-space: normal; 
+            max-height: 2.6em; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            padding-top: 3px; 
+        }
+
+        .highlight-red {
+            color: #e74c3c !important;
+            font-weight: 700;
+        }
+
+        .action-btn {
+            border: none;
+            padding: 8px 18px; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            min-width: 160px; 
+            flex-shrink: 0;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--primary-color); 
+            color: #fff;
+        }
+        
+        .action-btn[style*="min-width: 200px"] {
+             min-width: 200px; 
+        }
+
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            background-color: #3399ff;
+            opacity: 1; 
+        }
+
+        .copy-btn {
+            background-color: #fff;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            box-shadow: none;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .tool-btn-style {
+            background-color: #f0f8ff;
+            color: var(--primary-color);
+            border: 1px solid #d4e8ff;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.05);
+        }
+
+        .tool-btn-style:hover {
+            background-color: #b3d9ff;
+            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+        }
+
+        .action-btn svg {
+            margin-left: 6px; 
+            width: 14px; 
+            height: 14px;
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 280px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 14px 20px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 16px; 
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .item-info {
+                min-width: 200px; 
+                max-width: calc(100% - 170px); 
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .item-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .item-info {
+                flex-direction: column;
+                gap: 5px; 
+                margin-bottom: 10px; 
+                width: 100%;
+                min-width: auto;
+                max-width: 100%;
+            }
+            .item-title {
+                min-width: auto;
+                white-space: normal;
+            }
+            .action-btn {
+                width: 100%;
+                min-width: auto;
+                padding: 10px 18px; 
+            }
+            header {
+                grid-template-columns: 1fr auto 1fr;
+                padding: 20px 20px 20px;
+            }
+            
+            .back-btn {
+                width: auto; 
+                min-width: 100px; 
+                position: relative;
+                top: auto; 
+                margin-top: 10px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-spacer"></div>
+        <h1>내PC 바탕화면 정리</h1>
+        <a href="index.html" class="back-btn">
+            <span class="back-btn-icon"></span>
+            돌아가기
+        </a>
+    </header>
+
+    <main id="app-container">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <div id="toast">클립보드에 복사되었습니다!</div>
+
+    <script>
+        const categories = [
+            {
+                title: "기본 설정 및 아이콘",
+                items: [
+                    { title: "<span class=\"highlight-red\">컴퓨터 종료 버튼</span> 만들기", desc: "바로가기 만들기", btn: "shutdown -s -t 0 복사", link: "shutdown -s -t 0" },
+                    { title: "아이콘 생성기 v1.0", desc: "아이콘 확장자는 ICO (우클릭 > 사용자 지정 탭)", btn: "bit.ly/아이콘생성기", link: "https://stringweek-cyber.github.io/icon/" },
+                    { title: "", desc: "", btn: "무료 아이콘 사이트(아이콘파인더) 링크", link: "https://www.iconfinder.com/" }, 
+                    { title: "", desc: "", btn: "JPG를 ICO 로 변환 사이트", link: "https://convertio.co/kr/" },
+                    { title: "바탕화면 폴더 고정 프로그램<span class=\"highlight-red\">(로켓독)</span>", desc: "결제 유도 클릭 NO NO!", btn: "<span style=\"color:#fff !important;\">로켓독</span> 다운로드 링크", link: "https://punklabs.com/rocketdock" },
+                    { title: "<span class=\"highlight-red\">1초 검색</span> 프로그램", desc: "64비트 설치파일 다운", btn: "everything 다운로드", link: "https://www.voidtools.com/ko-kr/downloads/" }
+                ]
+            },
+            {
+                title: "타이머, 도구 및 멀티미디어",
+                items: [
+                    { title: "<span class=\"highlight-red\">작업표시줄 고정</span> 추천 링크", desc: "타이머 (bit.ly/큰시계)", btn: "bit.ly/큰시계", link: "https://stringweek-cyber.github.io/timer/" },
+                    { title: "", desc: "", btn: "큰시계 이미지 다운로드", link: "https://drive.google.com/drive/folders/1s4qHMJVo9EvOO6dJ8EdIupO9_zQ1rb8Q?usp=drive_link" },
+                    { title: "", desc: "", btn: "아이스크림 툴킷", link: "https://toolkit.i-scream.co.kr/" }, 
+                    { title: "", desc: "", btn: "비바샘 스마트 도구", link: "https://teachingtool.co.kr/vivasam/" }, 
+                    { title: "", desc: "", btn: "티셀파 판서 링크", link: "https://tbag.tsherpa.co.kr/?from=" }, 
+                    { title: "", desc: "", btn: "유튜브 음악 플레이어 (bit.ly/노래틀기)", link: "https://stringweek-cyber.github.io/music/" },
+                    { title: "", desc: "", btn: "음표 이미지 다운로드", link: "https://drive.google.com/drive/folders/1y9xvnOIBuPcM7Hg6jPAztuXpgkVMg3x_" },
+                    { title: "작업표시줄 구분선 만들기", desc: "바로가기 만들기 → 아이콘이미지 변경 → 작업표시줄 고정", 
+                      btn: "%windir%\\System32\\cmd.exe /c \"echo 1\" 복사", link: "%windir%\\System32\\cmd.exe /c \"echo 1\"" }, 
+                    { title: "", desc: "", btn: "작업표시줄 구분선 이미지 다운로드", link: "https://drive.google.com/drive/folders/1_t83uma_LmWUSuGA4eQhOGFwM7xqlNfo?usp=sharing" }
+                ]
+            },
+            {
+                title: "윈도우 앱 및 시작 메뉴",
+                items: [
+                    { 
+                        title: "시작 메뉴 <파일> 고정", 
+                        desc: "바로가기 만들기 → 윈도우기 + R : shell:programs 입력 후 바로가기 넣기 \n#즉시 변경 확인하기: 작업관리자 → 윈도우 탐색기 → 다시 시작", 
+                        btn: "shell:programs 복사", 
+                        link: "shell:programs" 
+                    }, 
+                    { title: "시작 <span class=\"highlight-red\">MS 앱스토어</span>", desc: "", btn: "카메라 링크", link: "https://apps.microsoft.com/detail/9wzdncrfjbbg?hl=ko-kr&gl=KR&ocid=pdpshare" }, 
+                    { title: "", desc: "", btn: "녹음기 링크", link: "https://apps.microsoft.com/detail/9wzdncrfhwkn?hl=ko-kr&gl=KR&ocid=pdpshare" },
+                    { title: "", desc: "", btn: "4K 비디오 다운로더 링크", link: "https://apps.microsoft.com/detail/xp8lvtc3ltsfn3?hl=ko&gl=KR&ocid=pdpshare" },
+                    { title: "", desc: "", btn: "MS PC Manager 링크", link: "https://apps.microsoft.com/detail/9pm860492szd?hl=ko&gl=KR&ocid=pdpshar" },
+                    { title: "", desc: "", btn: "Clipchamp 링크", link: "https://apps.microsoft.com/detail/9p1j8s7ccwwt?hl=ko&gl=KR&ocid=pdpsharee" },
+                    { title: "", desc: "", btn: "Power toys 링크", link: "https://apps.microsoft.com/detail/xp89dcgq3k6vld?hl=ko&gl=KR&ocid=pdpshare" },
+                    { title: "", desc: "", btn: "Snipaste 링크", link: "https://apps.microsoft.com/detail/9P1WXPKB68KX?hl=neutral&gl=KR&ocid=pdpshare" },
+                    { title: "<시작 메뉴> <span class=\"highlight-red\">고정 안되는 것들</span>", desc: "바로가기 만들기 → 아이콘 변경 → 고정", btn: "프린트 복사", link: "explorer.exe ms-settings:printers" },
+                    { title: "", desc: "", btn: "프로그램 추가/제거 복사", link: "explorer.exe ms-settings:appsfeatures" },
+                    { title: "", desc: "", btn: "마우스 복사", link: "explorer.exe ms-settings:easeofaccess-mousepointer" },
+                    { title: "", desc: "", btn: "AI 프롬프트 복사", link: "윈도우 11에서 OOO 바로가기를 만들려고 합니다. explorer.exe를 이용한 항목위치 입력 내용 알려주세요." }
+                ]
+            },
+            {
+                title: "크롬 확장 프로그램",
+                items: [
+                    { title: "<span class=\"highlight-red\">크롬 확장</span> 프로그램", desc: "", btn: "크롬 웹스토어", link: "https://chromewebstore.google.com/?pli=1" },
+                    { title: "", desc: "", btn: "QR 코드 링크", link: "https://chromewebstore.google.com/detail/qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp" },
+                    { title: "", desc: "", btn: "드래그프리 링크", link: "https://chromewebstore.google.com/detail/dragfree-mouse-drag-right/cnfngpgfjllafbghaimjcmailafcdhod" },
+                    { title: "", desc: "", btn: "유튜브 요약 링크", link: "https://chromewebstore.google.com/detail/livewiki-youtube-summariz/gaaicdedebppdnadcdddckdmccfejjli" },
+                    { title: "", desc: "", btn: "Enhancer 유튜브 조절 링크", link: "https://chromewebstore.google.com/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle" },
+                    { title: "", desc: "", btn: "구글 번역 링크", link: "https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" },
+                    { title: "", desc: "", btn: "한국어 맞춤법 검사기 링크", link: "https://chromewebstore.google.com/detail/%ED%95%9C%EA%B5%AD%EC%96%B4-%EB%A7%9E%EC%B6%A4%EB%B2%95-%EA%B2%80%EC%82%AC%EA%B8%B0/jglndaljomjcobaaoohfccecjcekcfgo" },
+                    { title: "", desc: "", btn: "Adguard 광고차단기 링크", link: "https://chromewebstore.google.com/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg" },
+                    { 
+                        title: "<span class=\"highlight-red\">크롬 주소표시줄</span> 검색 설정", 
+                        desc: "설정 → 검색엔진 → 사이트 검색 추가 (검색엔진 → 사이트)",
+                        btn: "https://www.youtube.com/results?search_query=%s 복사", 
+                        link: "https://www.youtube.com/results?search_query=%s" 
+                    }
+                ]
+            },
+            {
+                title: "팁 및 기타 도구",
+                items: [
+                    { title: "클래스젠(호흡하기)", desc: "", btn: "클래스젠(호흡하기) 링크", link: "https://www.classroomzen.com/breathing/everyday-anxiety" },
+                    { title: "핀볼뽑기", desc: "", btn: "핀볼뽑기 링크", link: "https://lazygyu.github.io/roulette/" },
+                    { title: "PDF 용량 줄이기", desc: "김정식 과학사랑", btn: "bit.ly/피디에프", link: "https://sciencej.cafe24.com/html5/pdf/kjspdf.html" }
+                ]
+            }
+        ];
+        
+        const specialToolButtons = [
+            "아이스크림 툴킷", 
+            "비바샘 스마트 도구", 
+            "티셀파 판서 링크",
+            "크롬 웹스토어"
+        ];
+
+        const container = document.getElementById('app-container');
+        const toast = document.getElementById('toast');
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.className = "show";
+            setTimeout(function() { 
+                toast.className = toast.className.replace("show", ""); 
+            }, 3000);
+        }
+
+        function copyToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast("'" + text + "' 복사 완료!");
+            } catch (err) {
+                showToast("복사 실패: " + err.message);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        categories.forEach((cat, index) => {
+            const box = document.createElement('div');
+            box.className = `theme-box theme-${index % 9}`;
+
+            cat.items.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'item-row';
+
+                const info = document.createElement('div');
+                info.className = 'item-info';
+
+                const title = document.createElement('span');
+                title.className = 'item-title';
+                title.innerHTML = item.title; 
+                info.appendChild(title);
+
+                if (item.desc) { 
+                    const desc = document.createElement('span');
+                    desc.className = 'item-desc';
+                    desc.innerHTML = item.desc.replace(/\n/g, '<br>'); 
+                    info.appendChild(desc);
+                }
+
+                row.appendChild(info);
+
+                if (item.btn) {
+                    let btn;
+                    
+                    if (item.btn.includes('복사')) {
+                        btn = document.createElement('button');
+                        btn.className = 'action-btn copy-btn';
+                        if (item.btn.length > 20) {
+                             btn.style.minWidth = '200px'; 
+                        }
+                        btn.innerHTML = item.btn;
+                        
+                        const textToCopy = item.link || item.btn.replace(' 복사', '').replace('복사', '').replace(/<[^>]*>/g, '').trim();
+                        
+                        btn.onclick = () => copyToClipboard(textToCopy);
+                    } else if (item.link) {
+                        btn = document.createElement('a');
+                        btn.className = 'action-btn';
+                        btn.innerHTML = item.btn;
+                        
+                        const buttonText = item.btn.replace(/<[^>]*>/g, '').trim();
+                        if (specialToolButtons.includes(buttonText)) {
+                            btn.classList.add('tool-btn-style');
+                        }
+
+                        const iconSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                        iconSvg.setAttribute("width", "14");
+                        iconSvg.setAttribute("height", "14");
+                        iconSvg.setAttribute("viewBox", "0 0 24 24");
+                        iconSvg.setAttribute("fill", "none");
+                        iconSvg.setAttribute("stroke", "currentColor");
+                        iconSvg.setAttribute("stroke-width", "2.5");
+                        iconSvg.setAttribute("stroke-linecap", "round");
+                        iconSvg.setAttribute("stroke-linejoin", "round");
+                        iconSvg.style.marginLeft = "6px";
+                        
+                        iconSvg.innerHTML = '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>';
+                        
+                        btn.appendChild(iconSvg);
+
+                        btn.href = item.link;
+                        btn.target = "_blank";
+                    } else {
+                        return; 
+                    }
+                    row.appendChild(btn);
+                }
+
+                box.appendChild(row);
+            });
+
+            container.appendChild(box);
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
