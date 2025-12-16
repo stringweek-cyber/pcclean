@@ -315,10 +315,9 @@
         <div class="page-container" id="page-10">
             <div class="page-number">Page 10</div>
             <img src="010.jpg" alt="Page 10: 폴더 아이콘 변경 방법">
-            <!-- 9쪽(아이콘생성기) + 14쪽(로켓독)에서 이동한 버튼 -->
+            <!-- 9쪽(아이콘생성기)에서 이동한 버튼, 로켓독 링크는 15쪽으로 이동 -->
             <div class="button-container">
                 <a href="https://stringweek-cyber.github.io/icon/" target="_blank" class="btn link-btn">아이콘 생성기(bit.ly/아이콘생성기) 링크</a>
-                <a href="https://punklabs.com/rocketdock" target="_blank" class="btn link-btn">RocketDock 링크</a>
             </div>
         </div>
         
@@ -346,12 +345,16 @@
         <div class="page-container" id="page-14">
             <div class="page-number">Page 14</div>
             <img src="014.jpg" alt="Page 14: 로켓독 다운로드 (이미지)">
-             <!-- 버튼은 10쪽으로 이동 완료 -->
+             <!-- 버튼은 10쪽/15쪽으로 이동 -->
         </div>
         
         <div class="page-container" id="page-15">
             <div class="page-number">Page 15</div>
             <img src="015.jpg" alt="Page 15: 로켓독 이미지 변경">
+            <!-- 10쪽에서 이동해 온 로켓독 링크 -->
+            <div class="button-container">
+                <a href="https://punklabs.com/rocketdock" target="_blank" class="btn link-btn">RocketDock 링크</a>
+            </div>
         </div>
         
         <div class="page-container" id="page-16">
@@ -362,6 +365,10 @@
         <div class="page-container" id="page-17">
             <div class="page-number">Page 17</div>
             <img src="017.jpg" alt="Page 17: 바탕화면 끝!">
+            <!-- 엣지 바로가기 복사 버튼 추가 -->
+            <div class="button-container">
+                <button class="btn copy-btn" onclick="copyToClipboard(this, '&quot;C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe&quot;')">엣지 바로가기 항목위치 복사</button>
+            </div>
         </div>
         
         <div class="page-container" id="page-18">
@@ -402,11 +409,10 @@
         <div class="page-container" id="page-25">
             <div class="page-number">Page 25</div>
             <img src="025.jpg" alt="Page 25: Everything / 타이머 (이미지)">
-            <!-- 25쪽의 기존 버튼들은 27쪽(시계) 및 30쪽(도구들)으로 분산 이동 -->
-            <!-- 37쪽에서 이동한 음악 플레이어 관련 버튼 추가 -->
+            <!-- 37쪽에서 이동한 음악 플레이어 관련 버튼 + 음표 이미지 다운로드 -->
             <div class="button-container">
                 <a href="https://stringweek-cyber.github.io/music/" target="_blank" class="btn link-btn">음악 플레이어(bit.ly/노래틀기) 링크</a>
-                <a href="https://drive.google.com/drive/folders/1y9xvnOIBuPcM7Hg6jPAztuXpgkVMg3x_?usp=sharing" target="_blank" class="btn link-btn">음표 이미지 링크</a>
+                <button class="btn link-btn" onclick="forceDownload('docs/이미지_음표.jpg', '이미지_음표.jpg')">음표 이미지 다운로드</button>
             </div>
         </div>
         
@@ -418,11 +424,10 @@
         <div class="page-container" id="page-27">
             <div class="page-number">Page 27</div>
             <img src="027.jpg" alt="Page 27: 작업 표시줄 구분선 만들기 (이미지)">
-            <!-- 기존 구분선 버튼은 33쪽으로 이동 -->
-            <!-- 25쪽에서 이동한 시계 관련 버튼 -->
+            <!-- 25쪽에서 이동한 시계 관련 버튼 + 큰시계 이미지 다운로드 -->
             <div class="button-container">
                  <a href="https://stringweek-cyber.github.io/timer/" target="_blank" class="btn link-btn">큰시계(bit.ly/큰시계) 링크</a>
-                 <a href="https://drive.google.com/drive/folders/1s4qHMJVo9EvOO6dJ8EdIupO9_zQ1rb8Q?usp=drive_link" target="_blank" class="btn link-btn">큰시계 이미지 다운로드 링크</a>
+                 <button class="btn link-btn" onclick="forceDownload('docs/이미지_큰시계.jpg', '이미지_큰시계.jpg')">큰시계 이미지 다운로드</button>
             </div>
         </div>
         
@@ -440,18 +445,19 @@
         <div class="page-container" id="page-30">
             <div class="page-number">Page 30</div>
             <img src="030.jpg" alt="Page 30: 시작 설정">
-            <!-- 25쪽(아이스크림, Everything) + 35쪽(비바샘, 티셀파)에서 이동한 버튼들 -->
-            <div class="button-container">
-                <a href="https://toolkit.i-scream.co.kr/" target="_blank" class="btn link-btn">아이스크림 툴킷 링크</a>
-                <a href="https://www.voidtools.com/ko-kr/downloads/" target="_blank" class="btn link-btn">Everything 다운로드 링크</a>
-                <a href="https://teachingtool.co.kr/vivasam/" target="_blank" class="btn link-btn">비바샘 스마트 도구 링크</a>
-                <a href="https://tbag.tsherpa.co.kr/?from=" target="_blank" class="btn link-btn">티셀파 판서 링크</a>
-            </div>
+            <!-- 버튼들은 31쪽으로 이동됨 -->
         </div>
         
         <div class="page-container" id="page-31">
             <div class="page-number">Page 31</div>
             <img src="031.jpg" alt="Page 31: 시작 앱스토어 설치">
+            <!-- 30쪽에서 이동해 온 버튼들 (순서: 아이스크림-티셀파-비바샘-Everything) -->
+            <div class="button-container">
+                <a href="https://toolkit.i-scream.co.kr/" target="_blank" class="btn link-btn">아이스크림 툴킷 링크</a>
+                <a href="https://tbag.tsherpa.co.kr/?from=" target="_blank" class="btn link-btn">티셀파 판서 링크</a>
+                <a href="https://teachingtool.co.kr/vivasam/" target="_blank" class="btn link-btn">비바샘 스마트 도구 링크</a>
+                <a href="https://www.voidtools.com/ko-kr/downloads/" target="_blank" class="btn link-btn">Everything 다운로드 링크</a>
+            </div>
         </div>
         
         <div class="page-container" id="page-32">
@@ -463,10 +469,9 @@
         <div class="page-container" id="page-33">
             <div class="page-number">Page 33</div>
             <img src="033.jpg" alt="Page 33: 시작 화면에 고정 안되는 것들 (이미지)">
-            <!-- 기존 마우스/프린터 버튼은 38쪽으로 이동 -->
-            <!-- 27쪽에서 이동한 구분선 관련 버튼 -->
+            <!-- 27쪽에서 이동한 구분선 관련 버튼 + 구분선 이미지 다운로드 -->
             <div class="button-container">
-                <a href="https://drive.google.com/drive/folders/1_t83uma_LmWUSuGA4eQhOGFwM7xqlNfo?usp=sharing" target="_blank" class="btn link-btn">구분선 이미지 링크</a>
+                <button class="btn link-btn" onclick="forceDownload('docs/이미지_구분선.jpg', '이미지_구분선.jpg')">구분선 이미지 다운로드</button>
                 <button class="btn copy-btn" onclick='copyToClipboard(this, "%windir%\\System32\\cmd.exe /c \"echo 1\"")'><code>%windir%\System32\cmd.exe /c "echo 1"</code> 복사</button>
             </div>
         </div>
@@ -479,7 +484,7 @@
         <div class="page-container" id="page-35">
             <div class="page-number">Page 35</div>
             <img src="035.jpg" alt="Page 35: 실전! 아이스크림 툴킷 (이미지)">
-            <!-- 버튼은 30쪽으로 이동 완료 -->
+            <!-- 버튼은 30쪽(->31쪽)으로 이동 완료 -->
         </div>
         
         <div class="page-container" id="page-36">
@@ -490,7 +495,6 @@
         <div class="page-container" id="page-37">
             <div class="page-number">Page 37</div>
             <img src="037.jpg" alt="Page 37: 음악 플레이어 고정하기 (이미지)">
-            <!-- 기존 음악 관련 버튼은 25쪽으로 이동 -->
             <!-- 28쪽에서 이동한 shell:programs 버튼 -->
             <div class="button-container">
                 <button class="btn copy-btn" onclick="copyToClipboard(this, 'shell:programs')"><code>shell:programs</code> 복사</button>
@@ -500,9 +504,9 @@
         <div class="page-container" id="page-38">
             <div class="page-number">Page 38</div>
             <img src="038.jpg" alt="Page 38: 크롬 즐겨찾기 (북마크바)">
-            <!-- 33쪽에서 이동한 마우스/설정 바로가기 버튼들 -->
+            <!-- 33쪽에서 이동한 마우스/설정 바로가기 버튼들 + 마우스 이미지 다운로드 -->
             <div class="button-container">
-                <a href="https://drive.google.com/drive/folders/1l1Yg3YMC1PG92Uu62RTGIYb2Y1G1MzAE?usp=sharing" target="_blank" class="btn link-btn">마우스 이미지 링크</a>
+                <button class="btn link-btn" onclick="forceDownload('docs/이미지_마우스.jpg', '이미지_마우스.jpg')">마우스 이미지 다운로드</button>
                 <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:printers')">프린트 복사</button>
                 <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:appsfeatures')">프로그램 추가/제거 복사</button>
                 <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:easeofaccess-mousepointer')">마우스 복사</button>
@@ -519,11 +523,10 @@
         <div class="page-container" id="page-40">
             <div class="page-number">Page 40</div>
             <img src="040.jpg" alt="Page 40: 추천 확장 프로그램 (이미지)">
-            <!-- 기존 확장프로그램 버튼은 삭제됨 -->
-            <!-- 32쪽에서 이동한 MS 스토어 앱 링크들 -->
+            <!-- 32쪽에서 이동한 MS 스토어 앱 링크들 (순서 변경: 녹음기 먼저) -->
             <div class="button-container">
-                <a href="https://apps.microsoft.com/detail/9wzdncrfjbbg?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">카메라 링크</a>
                 <a href="https://apps.microsoft.com/detail/9wzdncrfhwkn?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">녹음기 링크</a>
+                <a href="https://apps.microsoft.com/detail/9wzdncrfjbbg?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">카메라 링크</a>
                 <a href="https://apps.microsoft.com/detail/XP8LVTC3LTSFN3?hl=ko&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">4K 비디오 다운로더 링크</a>
                 <a href="https://apps.microsoft.com/detail/9pm860492szd?hl=ko&gl=KR&ocid=pdpshar" target="_blank" class="btn link-btn">MS PC Manager 링크</a>
                 <a href="https://apps.microsoft.com/detail/9p1j8s7ccwwt?hl=ko&gl=KR&ocid=pdpsharee" target="_blank" class="btn link-btn">Clipchamp 링크</a>
@@ -623,6 +626,26 @@
                     alert("클립보드 복사에 실패했습니다.");
                 });
             }
+        }
+
+        // 이미지 강제 다운로드 함수 (script 추가)
+        function forceDownload(url, fileName) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = fileName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(e => {
+                    console.error('다운로드 실패:', e);
+                    alert('다운로드에 실패했습니다. (파일이 없거나 보안 정책 문제일 수 있습니다)');
+                });
         }
         
         // --- 드롭다운 + 맨 위로 가기 스크립트 ---
