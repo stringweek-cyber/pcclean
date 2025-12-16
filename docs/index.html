@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>에듀테크 시작은 텅빈 바탕화면 정리부터 (최종 완성본)</title>
+    <title>에듀테크 시작은 텅빈 바탕화면 정리부터 (최종 수정본)</title>
     <style>
-        /* [수정] : 'scroll-behavior: smooth;' 속성 제거 */
         html {
             /* 스크롤 관련 속성 없음 */
         }
@@ -231,30 +230,26 @@
         <div class="dropdown-wrapper">
             <button class="dropdown-toggle-btn">바로가기</button> 
             <div class="dropdown-content" id="myDropdown">
-                <a href="#page-7">7쪽 컴퓨터 종료 버튼 만들기</a>
-                <a href="#page-9">9쪽 아이콘 생성기</a>
-                <a href="#page-14">14쪽 폴더 고정프로그램(로켓독)</a>
+                <a href="#page-8">8쪽 컴퓨터 종료 버튼</a>
+                <a href="#page-10">10쪽 아이콘/로켓독</a>
+                <a href="#page-12">12쪽 아이콘 사이트</a>
                 <a href="#page-20" class="highlight-link">20쪽 작업표시줄 앱 고정</a> 
                 <a href="#page-21" class="highlight-link">21쪽 작업표시줄 링크 고정</a> 
                 <a href="#page-23" class="highlight-link">23쪽 작업표시줄 폴더 고정</a> 
                 <a href="#page-24" class="highlight-link">24쪽 작업표시줄 설정</a> 
+                <a href="#page-25">25쪽 음악 플레이어</a>
                 <a href="#page-26" class="highlight-link">26쪽 작업표시줄에 크롬 계정 고정</a> 
-                <a href="#page-27" class="highlight-link">27쪽 작업표시줄 구분선 만들기</a> 
-                <a href="#page-28">28쪽 시작 메뉴 고정</a>
-                <a href="#page-30">30쪽 시작 설정</a>
-                <a href="#page-32">32쪽 시작 MS 앱스토어 설치</a>
-                <a href="#page-33">33쪽 시작 화면에 고정 안되는 것들</a>
+                <a href="#page-27">27쪽 타이머(큰시계)</a>
+                <a href="#page-30">30쪽 수업 도구 모음</a>
+                <a href="#page-33">33쪽 구분선 만들기</a>
                 <a href="#page-34">34쪽 시작 앱</a>
                 <a href="#page-36" class="highlight-link">36쪽 작업표시줄에 앱으로 고정하기</a> 
-                <a href="#page-37" class="highlight-link">37쪽 작업표시줄에 음악 플레이어 고정하기</a> 
-                <a href="#page-38">38쪽 크롬 즐겨찾기(북마크바)</a>
+                <a href="#page-37">37쪽 시작 메뉴 고정</a> 
+                <a href="#page-38">38쪽 시작 화면 안되는 것들</a>
                 <a href="#page-39">39쪽 크롬 확장프로그램</a>
+                <a href="#page-40">40쪽 MS 앱스토어 설치</a>
                 <a href="#page-41">41쪽 크롬 주소표시줄에 바로 검색</a>
-                <a href="#page-43">43쪽 폴더 이름</a>
-                <a href="#page-44">44쪽 파일명 한번에 바꾸기</a>
-                <a href="#page-45">45쪽 기타</a>
-                <a href="#page-46">46쪽 PC소리만 녹음하기</a> 
-                
+                <a href="#page-43">43쪽 폴더 이름/설문</a>
             </div>
         </div>
         
@@ -298,42 +293,49 @@
         
         <div class="page-container" id="page-7">
             <div class="page-number">Page 7</div>
-            <img src="007.jpg" alt="Page 7: 컴퓨터 종료 버튼 만들기">
-            <div class="button-container">
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'shutdown -s -t 0')"><code>shutdown -s -t 0</code> 복사</button>
-            </div>
+            <img src="007.jpg" alt="Page 7: 컴퓨터 종료 버튼 만들기 (이미지)">
+            <!-- 버튼은 8쪽으로 이동 -->
         </div>
         
         <div class="page-container" id="page-8">
             <div class="page-number">Page 8</div>
             <img src="008.jpg" alt="Page 8: 정리 안된 폴더">
+            <!-- 7쪽에서 이동한 버튼 -->
+            <div class="button-container">
+                <button class="btn copy-btn" onclick="copyToClipboard(this, 'shutdown -s -t 0')"><code>shutdown -s -t 0</code> 복사</button>
+            </div>
         </div>
         
         <div class="page-container" id="page-9">
             <div class="page-number">Page 9</div>
-            <img src="009.jpg" alt="Page 9: 아이콘 생성기 앱">
-            <div class="button-container">
-                <a href="https://stringweek-cyber.github.io/icon/" target="_blank" class="btn link-btn">아이콘 생성기(bit.ly/아이콘생성기) 링크</a>
-            </div>
+            <img src="009.jpg" alt="Page 9: 아이콘 생성기 앱 (이미지)">
+            <!-- 버튼은 10쪽으로 이동 -->
         </div>
         
         <div class="page-container" id="page-10">
             <div class="page-number">Page 10</div>
             <img src="010.jpg" alt="Page 10: 폴더 아이콘 변경 방법">
+            <!-- 9쪽(아이콘생성기) + 14쪽(로켓독)에서 이동한 버튼 -->
+            <div class="button-container">
+                <a href="https://stringweek-cyber.github.io/icon/" target="_blank" class="btn link-btn">아이콘 생성기(bit.ly/아이콘생성기) 링크</a>
+                <a href="https://punklabs.com/rocketdock" target="_blank" class="btn link-btn">RocketDock 링크</a>
+            </div>
         </div>
         
         <div class="page-container" id="page-11">
             <div class="page-number">Page 11</div>
-            <img src="011.jpg" alt="Page 11: 아이콘 예시">
-            <div class="button-container">
-                <a href="https://www.iconfinder.com/" target="_blank" class="btn link-btn">iconfinder 링크</a>
-                <a href="https://convertio.co/" target="_blank" class="btn link-btn">Convertio 링크</a>
-            </div>
+            <img src="011.jpg" alt="Page 11: 아이콘 예시 (이미지)">
+            <!-- 버튼은 12쪽으로 이동 -->
         </div>
         
         <div class="page-container" id="page-12">
             <div class="page-number">Page 12</div>
             <img src="012.jpg" alt="Page 12: 바로 가기 만들기">
+            <!-- 11쪽에서 이동한 버튼 -->
+            <div class="button-container">
+                <a href="https://www.iconfinder.com/" target="_blank" class="btn link-btn">iconfinder 링크</a>
+                <a href="https://convertio.co/" target="_blank" class="btn link-btn">Convertio 링크</a>
+            </div>
         </div>
         
         <div class="page-container" id="page-13">
@@ -343,10 +345,8 @@
         
         <div class="page-container" id="page-14">
             <div class="page-number">Page 14</div>
-            <img src="014.jpg" alt="Page 14: 로켓독 다운로드">
-            <div class="button-container">
-                <a href="https://punklabs.com/rocketdock" target="_blank" class="btn link-btn">RocketDock 링크</a>
-            </div>
+            <img src="014.jpg" alt="Page 14: 로켓독 다운로드 (이미지)">
+             <!-- 버튼은 10쪽으로 이동 완료 -->
         </div>
         
         <div class="page-container" id="page-15">
@@ -401,12 +401,12 @@
         
         <div class="page-container" id="page-25">
             <div class="page-number">Page 25</div>
-            <img src="025.jpg" alt="Page 25: Everything / 타이머">
+            <img src="025.jpg" alt="Page 25: Everything / 타이머 (이미지)">
+            <!-- 25쪽의 기존 버튼들은 27쪽(시계) 및 30쪽(도구들)으로 분산 이동 -->
+            <!-- 37쪽에서 이동한 음악 플레이어 관련 버튼 추가 -->
             <div class="button-container">
-                <a href="https://www.voidtools.com/ko-kr/downloads/" target="_blank" class="btn link-btn">Everything 다운로드 (64비트 설치파일) 링크</a>
-                <a href="https://stringweek-cyber.github.io/timer/" target="_blank" class="btn link-btn">큰시계(bit.ly/큰시계) 링크</a>
-                <a href="https://drive.google.com/drive/folders/1s4qHMJVo9EvOO6dJ8EdIupO9_zQ1rb8Q?usp=drive_link" target="_blank" class="btn link-btn">큰시계 이미지 다운로드 링크</a>
-                <a href="https://toolkit.i-scream.co.kr/" target="_blank" class="btn link-btn">아이스크림 툴킷 링크</a>
+                <a href="https://stringweek-cyber.github.io/music/" target="_blank" class="btn link-btn">음악 플레이어(bit.ly/노래틀기) 링크</a>
+                <a href="https://drive.google.com/drive/folders/1y9xvnOIBuPcM7Hg6jPAztuXpgkVMg3x_?usp=sharing" target="_blank" class="btn link-btn">음표 이미지 링크</a>
             </div>
         </div>
         
@@ -417,19 +417,19 @@
         
         <div class="page-container" id="page-27">
             <div class="page-number">Page 27</div>
-            <img src="027.jpg" alt="Page 27: 작업 표시줄 구분선 만들기">
+            <img src="027.jpg" alt="Page 27: 작업 표시줄 구분선 만들기 (이미지)">
+            <!-- 기존 구분선 버튼은 33쪽으로 이동 -->
+            <!-- 25쪽에서 이동한 시계 관련 버튼 -->
             <div class="button-container">
-                <a href="https://drive.google.com/drive/folders/1_t83uma_LmWUSuGA4eQhOGFwM7xqlNfo?usp=sharing" target="_blank" class="btn link-btn">구분선 이미지 링크</a>
-                <button class="btn copy-btn" onclick='copyToClipboard(this, "%windir%\\System32\\cmd.exe /c \"echo 1\"")'><code>%windir%\System32\cmd.exe /c "echo 1"</code> 복사</button>
+                 <a href="https://stringweek-cyber.github.io/timer/" target="_blank" class="btn link-btn">큰시계(bit.ly/큰시계) 링크</a>
+                 <a href="https://drive.google.com/drive/folders/1s4qHMJVo9EvOO6dJ8EdIupO9_zQ1rb8Q?usp=drive_link" target="_blank" class="btn link-btn">큰시계 이미지 다운로드 링크</a>
             </div>
         </div>
         
         <div class="page-container" id="page-28">
             <div class="page-number">Page 28</div>
-            <img src="028.jpg" alt="Page 28: 시작 메뉴 고정">
-            <div class="button-container">
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'shell:programs')"><code>shell:programs</code> 복사</button>
-            </div>
+            <img src="028.jpg" alt="Page 28: 시작 메뉴 고정 (이미지)">
+            <!-- 버튼은 37쪽으로 이동 -->
         </div>
         
         <div class="page-container" id="page-29">
@@ -440,6 +440,13 @@
         <div class="page-container" id="page-30">
             <div class="page-number">Page 30</div>
             <img src="030.jpg" alt="Page 30: 시작 설정">
+            <!-- 25쪽(아이스크림, Everything) + 35쪽(비바샘, 티셀파)에서 이동한 버튼들 -->
+            <div class="button-container">
+                <a href="https://toolkit.i-scream.co.kr/" target="_blank" class="btn link-btn">아이스크림 툴킷 링크</a>
+                <a href="https://www.voidtools.com/ko-kr/downloads/" target="_blank" class="btn link-btn">Everything 다운로드 링크</a>
+                <a href="https://teachingtool.co.kr/vivasam/" target="_blank" class="btn link-btn">비바샘 스마트 도구 링크</a>
+                <a href="https://tbag.tsherpa.co.kr/?from=" target="_blank" class="btn link-btn">티셀파 판서 링크</a>
+            </div>
         </div>
         
         <div class="page-container" id="page-31">
@@ -449,7 +456,71 @@
         
         <div class="page-container" id="page-32">
             <div class="page-number">Page 32</div>
-            <img src="032.jpg" alt="Page 32: 추천 앱스토어 앱">
+            <img src="032.jpg" alt="Page 32: 추천 앱스토어 앱 (이미지)">
+            <!-- 버튼은 40쪽으로 이동 -->
+        </div>
+        
+        <div class="page-container" id="page-33">
+            <div class="page-number">Page 33</div>
+            <img src="033.jpg" alt="Page 33: 시작 화면에 고정 안되는 것들 (이미지)">
+            <!-- 기존 마우스/프린터 버튼은 38쪽으로 이동 -->
+            <!-- 27쪽에서 이동한 구분선 관련 버튼 -->
+            <div class="button-container">
+                <a href="https://drive.google.com/drive/folders/1_t83uma_LmWUSuGA4eQhOGFwM7xqlNfo?usp=sharing" target="_blank" class="btn link-btn">구분선 이미지 링크</a>
+                <button class="btn copy-btn" onclick='copyToClipboard(this, "%windir%\\System32\\cmd.exe /c \"echo 1\"")'><code>%windir%\System32\cmd.exe /c "echo 1"</code> 복사</button>
+            </div>
+        </div>
+        
+        <div class="page-container" id="page-34">
+            <div class="page-number">Page 34</div>
+            <img src="034.jpg" alt="Page 34: 시작 앱">
+        </div>
+        
+        <div class="page-container" id="page-35">
+            <div class="page-number">Page 35</div>
+            <img src="035.jpg" alt="Page 35: 실전! 아이스크림 툴킷 (이미지)">
+            <!-- 버튼은 30쪽으로 이동 완료 -->
+        </div>
+        
+        <div class="page-container" id="page-36">
+            <div class="page-number">Page 36</div>
+            <img src="036.jpg" alt="Page 36: 작업표시줄에 앱으로 고정하기">
+        </div>
+        
+        <div class="page-container" id="page-37">
+            <div class="page-number">Page 37</div>
+            <img src="037.jpg" alt="Page 37: 음악 플레이어 고정하기 (이미지)">
+            <!-- 기존 음악 관련 버튼은 25쪽으로 이동 -->
+            <!-- 28쪽에서 이동한 shell:programs 버튼 -->
+            <div class="button-container">
+                <button class="btn copy-btn" onclick="copyToClipboard(this, 'shell:programs')"><code>shell:programs</code> 복사</button>
+            </div>
+        </div>
+        
+        <div class="page-container" id="page-38">
+            <div class="page-number">Page 38</div>
+            <img src="038.jpg" alt="Page 38: 크롬 즐겨찾기 (북마크바)">
+            <!-- 33쪽에서 이동한 마우스/설정 바로가기 버튼들 -->
+            <div class="button-container">
+                <a href="https://drive.google.com/drive/folders/1l1Yg3YMC1PG92Uu62RTGIYb2Y1G1MzAE?usp=sharing" target="_blank" class="btn link-btn">마우스 이미지 링크</a>
+                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:printers')">프린트 복사</button>
+                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:appsfeatures')">프로그램 추가/제거 복사</button>
+                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:easeofaccess-mousepointer')">마우스 복사</button>
+                <button class="btn copy-btn" onclick="copyToClipboard(this, '윈도우 11에서 OOO 바로가기를 만들려고 합니다. explorer.exe를 이용한 항목위치 입력 내용 알려주세요.')">AI 프롬프트 복사</button>
+            </div>
+        </div>
+        
+        <div class="page-container" id="page-39">
+            <div class="page-number">Page 39</div>
+            <img src="039.jpg" alt="Page 39: 크롬 확장프로그램">
+            <!-- 39쪽 버튼 삭제됨 -->
+        </div>
+        
+        <div class="page-container" id="page-40">
+            <div class="page-number">Page 40</div>
+            <img src="040.jpg" alt="Page 40: 추천 확장 프로그램 (이미지)">
+            <!-- 기존 확장프로그램 버튼은 삭제됨 -->
+            <!-- 32쪽에서 이동한 MS 스토어 앱 링크들 -->
             <div class="button-container">
                 <a href="https://apps.microsoft.com/detail/9wzdncrfjbbg?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">카메라 링크</a>
                 <a href="https://apps.microsoft.com/detail/9wzdncrfhwkn?hl=ko-kr&gl=KR&ocid=pdpshare" target="_blank" class="btn link-btn">녹음기 링크</a>
@@ -461,79 +532,10 @@
             </div>
         </div>
         
-        <div class="page-container" id="page-33">
-            <div class="page-number">Page 33</div>
-            <img src="033.jpg" alt="Page 33: 시작 화면에 고정 안되는 것들">
-            <div class="button-container">
-                <a href="https://drive.google.com/drive/folders/1l1Yg3YMC1PG92Uu62RTGIYb2Y1G1MzAE?usp=sharing" target="_blank" class="btn link-btn">마우스 이미지 링크</a>
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:printers')">프린트 복사</button>
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:appsfeatures')">프로그램 추가/제거 복사</button>
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'explorer.exe ms-settings:easeofaccess-mousepointer')">마우스 복사</button>
-                <button class="btn copy-btn" onclick="copyToClipboard(this, '윈도우 11에서 OOO 바로가기를 만들려고 합니다. explorer.exe를 이용한 항목위치 입력 내용 알려주세요.')">AI 프롬프트 복사</button>
-            </div>
-        </div>
-        
-        <div class="page-container" id="page-34">
-            <div class="page-number">Page 34</div>
-            <img src="034.jpg" alt="Page 34: 시작 앱">
-        </div>
-        
-        <div class="page-container" id="page-35">
-            <div class="page-number">Page 35</div>
-            <img src="035.jpg" alt="Page 35: 실전! 아이스크림 툴킷">
-            <div class="button-container">
-                <a href="https://teachingtool.co.kr/vivasam/" target="_blank" class="btn link-btn">비바샘 스마트 도구 링크</a>
-                <a href="https://tbag.tsherpa.co.kr/?from=" target="_blank" class="btn link-btn">티셀파 판서 링크</a>
-            </div>
-        </div>
-        
-        <div class="page-container" id="page-36">
-            <div class="page-number">Page 36</div>
-            <img src="036.jpg" alt="Page 36: 작업표시줄에 앱으로 고정하기">
-        </div>
-        
-        <div class="page-container" id="page-37">
-            <div class="page-number">Page 37</div>
-            <img src="037.jpg" alt="Page 37: 음악 플레이어 고정하기">
-            <div class="button-container">
-                <a href="https://stringweek-cyber.github.io/music/" target="_blank" class="btn link-btn">음악 플레이어(bit.ly/노래틀기) 링크</a>
-                <a href="https://drive.google.com/drive/folders/1y9xvnOIBuPcM7Hg6jPAztuXpgkVMg3x_?usp=sharing" target="_blank" class="btn link-btn">음표 이미지 링크</a>
-            </div>
-        </div>
-        
-        <div class="page-container" id="page-38">
-            <div class="page-number">Page 38</div>
-            <img src="038.jpg" alt="Page 38: 크롬 즐겨찾기 (북마크바)">
-        </div>
-        
-        <div class="page-container" id="page-39">
-            <div class="page-number">Page 39</div>
-            <img src="039.jpg" alt="Page 39: 크롬 확장프로그램">
-            <div class="button-container">
-                <a href="https://chromewebstore.google.com/" target="_blank" class="btn link-btn">크롬 웹 스토어 링크</a>
-            </div>
-        </div>
-        
-        <div class="page-container" id="page-40">
-            <div class="page-number">Page 40</div>
-            <img src="040.jpg" alt="Page 40: 추천 확장 프로그램">
-            <div class="button-container">
-                <a href="https://chromewebstore.google.com/detail/afpbjjgbdimpioenaedcjgkaigggcdpp?utm_source=item-share-cb" target="_blank" class="btn link-btn">QR Code Generator 링크</a>
-                <a href="https://chromewebstore.google.com/detail/cnfngpgfjllafbghaimjcmailafcdhod?utm_source=item-share-cb" target="_blank" class="btn link-btn">드래그프리 링크</a>
-                <a href="https://chromewebstore.google.com/detail/gaaicdedebppdnadcdddckdmccfejjli?utm_source=item-share-cb" target="_blank" class="btn link-btn">YouTube Summary 링크</a>
-                <a href="https://chromewebstore.google.com/detail/ponfpcnoihfmfllpaingbgckeeldkhle?utm_source=item-share-cb" target="_blank" class="btn link-btn">Enhancer for YouTube™ 링크</a>
-                <a href="https://chromewebstore.google.com/detail/aapbdbdomjkkjkaonfhkkikfgjllcleb?utm_source=item-share-cb" target="_blank" class="btn link-btn">Google 번역 링크</a>
-                <a href="https://chromewebstore.google.com/detail/jglndaljomjcobaaoohfccecjcekcfgo?utm_source=item-share-cb" target="_blank" class="btn link-btn">한국어 맞춤법 검사기 링크</a>
-                <a href="https://chromewebstore.google.com/detail/bgnkhhnnamicmpeenaelnjfhikgbkllg?utm_source=item-share-cb" target="_blank" class="btn link-btn">AdGuard 광고차단기 링크</a>
-            </div>
-        </div>
-        
         <div class="page-container" id="page-41">
             <div class="page-number">Page 41</div>
             <img src="041.jpg" alt="Page 41: 크롬 주소표시줄에 바로 검색">
-            <div class="button-container">
-                <button class="btn copy-btn" onclick="copyToClipboard(this, 'https://www.youtube.com/results?search_query=%s')"><code>https://www.youtube.com/results?search_query=%s</code> 복사</button>
-            </div>
+             <!-- 41쪽 버튼 삭제됨 -->
         </div>
         
         <div class="page-container" id="page-42">
@@ -544,40 +546,11 @@
         <div class="page-container" id="page-43">
             <div class="page-number">Page 43</div>
             <img src="043.jpg" alt="Page 43: 폴더 이름">
-        </div>
-        
-        <div class="page-container" id="page-44">
-            <div class="page-number">Page 44</div>
-            <img src="044.jpg" alt="Page 44: 단축키 F2">
-        </div>
-        
-        <div class="page-container" id="page-45">
-            <div class="page-number">Page 45</div>
-            <img src="045.jpg" alt="Page 45: 기타">
+            <!-- 48쪽에서 이동한 설문 링크 -->
             <div class="button-container">
-                <a href="https://classroomzen.com/breathing/everyday-anxiety" target="_blank" class="btn link-btn">클래스젠 링크</a>
-                <a href="https://lazygyu.github.io/roulette/" target="_blank" class="btn link-btn">핀볼뽑기 링크</a>
-                <a href="https://sciencej.cafe24.com/html5/pdf/kjspdf.html" target="_blank" class="btn link-btn">PDF 용량 줄이기 링크</a>
+                <a href="https://educator.edunet.net/crsRoom/cmty/stsfct/crsRoomCmtyStsfct.php?crsId=강의숫자링크" target="_blank" class="btn link-btn">만족도 설문 참여</a>
             </div>
         </div>
-        
-        <div class="page-container" id="page-46">
-            <div class="page-number">Page 46</div>
-            <img src="046.jpg" alt="Page 46: PC소리만 녹음하기">
-        </div>
-        
-        <div class="page-container" id="page-47">
-            <div class="page-number">Page 47</div>
-            <img src="047.jpg" alt="Page 47: 출석확인">
-        </div>
-
-       <div class="page-container" id="page-48">
-    <div class="page-number">Page 48</div>
-    <img src="048.jpg" alt="Page 48: 빅터 프랭클 인용">
-    <div class="button-container">
-        <a href="https://educator.edunet.net/crsRoom/cmty/stsfct/crsRoomCmtyStsfct.php?crsId=강의숫자링크" target="_blank" class="btn link-btn">만족도 설문 참여</a>
-    </div>
-</div>
         
     </div>
 
@@ -652,7 +625,7 @@
             }
         }
         
-        // --- [수정] 드롭다운 + 맨 위로 가기 스크립트 ---
+        // --- 드롭다운 + 맨 위로 가기 스크립트 ---
         document.addEventListener('DOMContentLoaded', function() {
             
             // --- 드롭다운 메뉴 로직 ---
@@ -685,7 +658,7 @@
             });
             
             
-            // --- [추가] 맨 위로 가기 버튼 로직 ---
+            // --- 맨 위로 가기 버튼 로직 ---
             const topBtn = document.getElementById("scrollTopBtn");
 
             // 1. 스크롤 시 버튼 표시/숨김
@@ -707,20 +680,4 @@
     </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
